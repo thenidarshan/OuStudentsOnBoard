@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<head lang="en">
+	<!-- TAGS -->
+	<title>OuStudentsOnBoard</title>
+	<meta name="description" content="A Communitiy for osmania university students">
+
+	<!-- STYLE -->
+	<link rel="stylesheet" href="css/style.css">
+	<script rel="preconnect" src="https://kit.fontawesome.com/241f6baf1e.js" crossorigin="anonymous"></script>
+
+	<!-- REACT (use different sources in production) -->
+	<script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+	<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+	<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+	<!-- SCRIPTS -->
+	<script src="js/loader.js"></script>
+	<script src="js/index.js" type="text/babel" data-type="module"></script>
+</head>
+<body>
+	<!-- page -->
+	<main id="page-content">
+		<div id="posts-list">
+			<div id="filter-list" class="box">
+				<div class="filter" onclick="toggleFilter(0)">
+					<i class="fas fa-crown"></i>
+					<p>Best</p>
+				</div>
+				<div class="filter" onclick="toggleFilter(1)">
+					<i class="fas fa-fire"></i>
+					<p>Hot</p>
+				</div>
+				<div class="filter" onclick="toggleFilter(2)">
+					<i class="fas fa-certificate"></i>
+					<p>New</p>
+				</div>
+				<div class="filter" onclick="toggleFilter(3)">
+					<i class="fas fa-trophy"></i>
+					<p>Top</p>
+				</div>
+				<div class="filter" onclick="toggleFilter(4)">
+					<i class="fas fa-chart-line"></i>
+					<p>Rising</p>
+				</div>
+				<div class="filter" onclick="toggleFilter(5)">
+					<i class="fas fa-bullhorn"></i>
+					<p>Controversial</p>
+				</div>
+			</div>
+			<!-- list of posts -->
+		</div>
+
+		<!-- side menu -->
+		<aside id="side-menu">
+			<div id="side-menu-container">
+				<!-- subreddits -->
+				<div id="subreddits-list" class="box">
+					<h2>Current feed</h2>
+					<ul></ul>
+					<div id="subreddit-options" class="button-group">
+						<button class="button" onclick="showFeedName()">Save feed </button>
+						<button class="button" onclick="showCustomFeedList()">Load feed</button>
+						<input id="feed-name" class="input" type="text" placeholder="Enter a feed name">
+					</div>
+				</div>
+
+				<!-- <div class="button-list">
+					<button class="button" onclick="showFeedName()"><i class="fa-solid fa-circle-arrow-down icon"></i> Save</button>
+					<button class="button" onclick="showCustomFeedList()"><i class="fa-solid fa-circle-arrow-up icon"></i> Load</button>
+					<button class="button"><i class="fa-solid fa-sliders icon"></i> Options</button>
+				</div> -->
+
+				<!-- feeds -->
+				<div id="feeds-list" class="box">
+					<ul></ul>
+				</div>
+
+
+				<!-- options -->
+				<div id="options-list" class="box">
+					<h2><!--<button class="button icon"><i class="fa-solid fa-caret-left"></i></button>--> Options</h2>
+					<span>
+						<i class="far fa-eye-slash"></i>
+						<p>Hide sensitive content</p>
+						<label class="switch">
+							<input id="sensitive-content" type="checkbox" onchange="toggleSensitiveContent()">
+							<span class="slider"></span>
+						</label>
+					</span>
+					<span>
+						<i class="fa-solid fa-fire-flame-simple"></i>
+						<p>Blur sensitive content</p>
+						<label class="switch">
+							<input id="sensitive-content-blur" type="checkbox" onchange="toggleSensitiveContentBlur()" checked>
+							<span class="slider"></span>
+						</label>
+					</span>
+					<!--<h2>Account</h2>
+					<div class="button-group">
+						<a href="https://www.reddit.com/api/v1/authorize?response_type=code&client_id=xwiq3LRpjO0ao8RmQcLQaQ&redirect_uri=https%3A%2F%2Fnexilis.netlify.app%2F&scope=identity+mysubreddits&duration=permanent&state=connect" class="button">Connect to Reddit</a>
+					</div>-->
+				</div>
+			</div>
+		</aside>
+
+		<!-- scroll up -->
+		<a id="scroll-up" class="button" onclick="scrollToTop()">
+			<i class="fas fa-rocket"></i>
+			<p>Scroll to top</p>
+		</a>
+
+		<!-- post viewer -->
+		<div id="post-viewer">
+
+		</div>
+	</main>
+</body>

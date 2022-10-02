@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<head lang="en">
+	<!-- TAGS -->
+	<title>OuStudentsOnBoard - search results</title>
+	<meta name="description" content="A Reddit clone made by Prozilla powered by the Reddit API. Add your favourite subreddits, choose a sort option and start browsing your custom feed!">
+
+	<!-- STYLE -->
+	<link rel="stylesheet" href="../css/style.css">
+	<script rel="preconnect" src="https://kit.fontawesome.com/241f6baf1e.js" crossorigin="anonymous"></script>
+
+	<!-- REACT (use different sources in production) -->
+	<script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+	<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+	<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+	<!-- SCRIPTS -->
+	<script src="../js/loader.js"></script>
+	<script src="js/index.js" type="text/babel"></script>
+	<script src="js/search.js" type="text/babel"></script>
+</head>
+<body>
+	<main id="page-content">
+		<div id="results-list">
+			<div id="filter-list" class="box">
+				<div class="filter" onclick="toggleFilter(0, true)">
+					<i class="fa-solid fa-user-group"></i>
+					<p>Communities</p>
+				</div>
+				<div class="filter" onclick="toggleFilter(1, true)">
+					<i class="fa-solid fa-message"></i>
+					<p>Posts</p>
+				</div>
+				<div class="filter" onclick="toggleFilter(2, true)">
+					<i class="fa-solid fa-user"></i>
+					<p>Users</p>
+				</div>
+			</div>
+		</div>
+
+		<!-- scroll up -->
+		<a id="scroll-up" class="button" onclick="scrollToTop()">
+			<i class="fas fa-rocket"></i>
+			<p>Scroll to top</p>
+		</a>
+
+		<!-- post viewer -->
+		<div id="post-viewer">
+
+		</div>
+	</main>
+</body>
